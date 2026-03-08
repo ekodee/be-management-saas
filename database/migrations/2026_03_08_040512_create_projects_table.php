@@ -14,9 +14,9 @@ return new class extends Migration
         Schema::create('projects', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->string('description')->nullable();
-            $table->string('cover');
-            $table->foreignId('owner_id')->contrained('users')->ondelete('cascade');
+            $table->text('description')->nullable();
+            $table->string('cover')->nullable();
+            $table->foreignId('owner_id')->constrained('users')->ondelete('cascade');
             $table->timestamps();
         });
     }
